@@ -1,0 +1,9 @@
+.link {
+    display: inline-block;
+    text-decoration: none;
+    color: #101828;
+}
+
+.active {
+    color: #0b44cd;
+}
