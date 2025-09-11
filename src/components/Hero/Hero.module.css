@@ -1,0 +1,20 @@
+.heroWrapper {
+    background-image: url("/src/images/Hero_desk.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+}
+
+.heroContainer {
+    max-width: 1440px;
+    padding: 436px 328px 60px;
+    margin: 0 auto;    
+}
+
+.heroTitle {
+    color: white;
+}
+
+.heroSubTitle {
+    color: white;
+}

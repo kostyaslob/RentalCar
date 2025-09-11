@@ -5,8 +5,10 @@ import Navigation from "../Navigation/Navigation";
 export default function Header() {
     return (
       <header className={css.header}>
-        <Logo />
-        <Navigation />
+        <div className={css.headerWrapper} >
+          <Logo />
+          <Navigation />
+        </div>
       </header>
     );
 }

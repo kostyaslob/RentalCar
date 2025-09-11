@@ -1,7 +1,12 @@
 .header {
+    background: #f2f4f7;
+}
+
+.headerWrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 24px 120px;
-    background: #f2f4f7;
+    max-width: 1440px;
+    margin: 0 auto;
 }
