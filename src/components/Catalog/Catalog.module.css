@@ -1,0 +1,9 @@
+.catalogWrapper {
+
+}
+
+.catalogContainer {
+    max-width: 1440px;
+    padding: 84px 120px 124px;
+    margin: 0 auto;
+}
