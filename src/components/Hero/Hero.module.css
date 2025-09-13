@@ -7,14 +7,43 @@
 
 .heroContainer {
     max-width: 1440px;
-    padding: 436px 328px 60px;
-    margin: 0 auto;    
+    padding: 436px 250px 60px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;    
 }
 
 .heroTitle {
-    color: white;
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 120%;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 16px;
 }
 
 .heroSubTitle {
-    color: white;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 133%;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 40px;
+}
+
+.viewCatalogBtn {
+    border-radius: 12px;
+    padding: 12px 12px;
+    width: 276px;
+    height: 44px;
+    background: #3470ff;
+    border: none;
+
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 125%;
+    color: #fff;
+    text-align: center;
 }

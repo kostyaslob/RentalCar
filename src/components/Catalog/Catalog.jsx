@@ -33,7 +33,7 @@ export default function Catalog() {
         <SearchBar />
         <CarList cars={items} loading={loading && page === 1} />
         {hasMore > 0 && (
-          <div className={css.fieldLodeMore}>
+          <div className={css.fieldLoadMore}>
             <LoadMoreBtn onClick={handleLoadMore} disabled={loading} />
             {loading && page > 1 && <Loader />}
           </div>

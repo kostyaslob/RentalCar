@@ -9,7 +9,7 @@ export default function Hero() {
         <h2 className={css.heroSubTitle}>
           Reliable and budget-friendly rentals for any journey
         </h2>
-        <Link to="/catalog">View Catalog</Link>
+        <Link className={css.viewCatalogBtn} to="/catalog">View Catalog</Link>
       </div>
     </div>
   );
