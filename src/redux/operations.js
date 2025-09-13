@@ -13,7 +13,6 @@ export const fetchCars = createAsyncThunk(
         ...filters,
       };
         const response = await axios.get("/cars", { params });
-        console.log("Ответ от сервера:", response.data);
       return {
         cars: response.data.cars,
         page: Number(response.data.page),

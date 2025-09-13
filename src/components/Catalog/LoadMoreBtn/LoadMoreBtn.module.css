@@ -1,0 +1,15 @@
+.loadMoreBtn {
+    border: 1px solid #3470ff;
+    border-radius: 12px;
+    padding: 12px 36px;
+    width: 156px;
+    height: 44px;
+    background-color: transparent;
+    margin-top: 80px;
+
+    font-family: "Manrope", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 125%;
+    color: #101828;
+}
