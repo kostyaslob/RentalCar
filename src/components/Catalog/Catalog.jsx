@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchCars } from "../../redux/operations.js";
 import { setPage } from "../../redux/slice.js";
+import { Loader } from "../Loader/Loader";
 
 import SearchBar from "./SearchBar/SearchBar";
 import CarList from "./CarList/CarList";
@@ -30,8 +31,13 @@ export default function Catalog() {
     <div className={css.catalogWrapper}>
       <div className={css.catalogContainer}>
         <SearchBar />
-        <CarList cars={items} loading={loading} />
-        {hasMore > 0 && <LoadMoreBtn onClick={handleLoadMore} />}
+        <CarList cars={items} loading={loading && page === 1} />
+        {hasMore > 0 && (
+          <div className={css.fieldLodeMore}>
+            <LoadMoreBtn onClick={handleLoadMore} disabled={loading} />
+            {loading && page > 1 && <Loader />}
+          </div>
+        )}
       </div>
     </div>
   );
