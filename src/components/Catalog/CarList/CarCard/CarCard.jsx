@@ -1,4 +1,5 @@
 import css from "./CarCard.module.css";
+import { Link } from "react-router-dom";
 
 export default function CarCard({ car }) {
   return (
@@ -21,18 +22,20 @@ export default function CarCard({ car }) {
         </div>
         <div className={css.carDescr}>
           <div>
-              <span>{car.address.split(",")[1]}</span>
-              <span>{car.address.split(",")[2]}</span>
-              <span>{car.rentalCompany}</span>
+            <span>{car.address.split(",")[1]}</span>
+            <span>{car.address.split(",")[2]}</span>
+            <span>{car.rentalCompany}</span>
           </div>
           <div>
-              <span>{car.type}</span>
-              <span>{car.mileage.toLocaleString()} km</span>
+            <span>{car.type}</span>
+            <span>{car.mileage.toLocaleString()} km</span>
           </div>
         </div>
       </div>
 
-      <button className={css.readMoreBtn}>Read more</button>
+      <Link className={css.readMoreBtn} to={`/catalog/${car.id}`}>
+        Read more
+      </Link>
     </div>
   );
 }

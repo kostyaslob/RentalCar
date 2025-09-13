@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchCars, fetchBrands } from "./operations";
+import { fetchCars, fetchBrands, fetchCarById } from "./operations";
 
 const slice = createSlice({
   name: "cars",
@@ -18,6 +18,7 @@ const slice = createSlice({
     totalCars: 0,
     totalPage: 0,
     brands: [],
+    car: null,
   },
   reducers: {
     setFilters: (state, action) => {
@@ -58,6 +59,19 @@ const slice = createSlice({
         state.brands = action.payload;
       })
       .addCase(fetchBrands.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload;
+      })
+      .addCase(fetchCarById.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+        state.car = null;
+      })
+      .addCase(fetchCarById.fulfilled, (state, action) => {
+        state.loading = false;
+        state.car = action.payload;
+      })
+      .addCase(fetchCarById.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload;
       });
