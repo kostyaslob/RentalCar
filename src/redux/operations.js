@@ -14,7 +14,12 @@ export const fetchCars = createAsyncThunk(
       };
         const response = await axios.get("/cars", { params });
         console.log("Ответ от сервера:", response.data);
-      return { cars: response.data, page: response.data.page };
+      return {
+        cars: response.data.cars,
+        page: Number(response.data.page),
+        totalCars: response.data.totalCars,
+        totalPages: response.data.totalPages,
+      };
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }

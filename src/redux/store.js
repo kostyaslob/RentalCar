@@ -1,9 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
-
-const rootReducer = (state) => {
-    return state;
-}
+import carsReducer from "./slice";
 
 export const store = configureStore({
-    reducer: rootReducer,
+  reducer: {
+    cars: carsReducer,
+  },
 });
