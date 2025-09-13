@@ -18,7 +18,10 @@
 }
 
 .favIconDef {
-    fill: #f2f4f7;
+    fill: none;
+    stroke: #f2f4f7;
+    stroke-width: 3;
+
 }
 
 .favIconActive {
