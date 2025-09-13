@@ -10,9 +10,11 @@ import LoadMoreBtn from "./LoadMoreBtn/LoadMoreBtn";
 
 export default function Catalog() {
   const dispatch = useDispatch();
-  const { items, loading, page, limit, filters } = useSelector(
+  const { items, loading, page, limit, filters, totalPages } = useSelector(
     (state) => state.cars
   );
+
+  const hasMore = page < totalPages;
 
   useEffect(() => {
     dispatch(fetchCars({ page: 1, limit, filters }));
@@ -29,7 +31,7 @@ export default function Catalog() {
       <div className={css.catalogContainer}>
         <SearchBar />
         <CarList cars={items} loading={loading} />
-        {items.length > 0 && <LoadMoreBtn onClick={handleLoadMore} />}
+        {hasMore > 0 && <LoadMoreBtn onClick={handleLoadMore} />}
       </div>
     </div>
   );
