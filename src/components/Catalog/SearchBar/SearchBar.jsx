@@ -20,7 +20,7 @@ export default function SearchBar() {
 
   const priceOptions = [30, 40, 50, 60, 70, 80].map((val) => ({
     value: val,
-    label: `To $${val}`,
+    label: val,
   }));
 
   const brandsOptions = brands.map((brand) => ({
@@ -55,6 +55,7 @@ export default function SearchBar() {
           value={selectedBrands}
           onChange={setSelectedBrands}
           placeholder="Choose a brand"
+          classNamePrefix="react-select"
         />
       </div>
       <div className={css.field}>
@@ -65,19 +66,20 @@ export default function SearchBar() {
           value={selectedPrice}
           onChange={setSelectedPrice}
           placeholder="Choose a price"
+          classNamePrefix="react-select"
         />
       </div>
       <div className={css.field}>
         <label>Car mileage / km</label>
         <div className={css.mileage}>
           <input
-            type="number"
+            type="text"
             value={minMileage}
             onChange={(event) => setMinMileage(event.target.value)}
             placeholder="From"
           />
           <input
-            type="number"
+            type="text"
             value={maxMileage}
             onChange={(event) => setMaxMileage(event.target.value)}
             placeholder="To"
