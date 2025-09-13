@@ -17,6 +17,14 @@
     object-fit: cover;
 }
 
+.favIconDef {
+    fill: #f2f4f7;
+}
+
+.favIconActive {
+    fill: #3470ff;
+}
+
 .favBtn {
     position: absolute;
     top: 16px;

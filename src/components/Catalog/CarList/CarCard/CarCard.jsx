@@ -1,7 +1,14 @@
 import css from "./CarCard.module.css";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { toggleFavorites } from "../../../../redux/favoritesSlice";
 
 export default function CarCard({ car }) {
+  const dispatch = useDispatch();
+  const favorites = useSelector((state) => state.favorites.items);
+  const isFavorite = favorites.includes(car.id);
+
+
   return (
     <div className={css.carCard}>
       <div className={css.carImageCont}>
@@ -10,7 +17,22 @@ export default function CarCard({ car }) {
           src={car.img}
           alt={`${car.brand} ${car.model}`}
         />
-        <button className={css.favBtn}>❤</button>
+        <button
+          className={css.favBtn}
+          onClick={() => dispatch(toggleFavorites(car.id))}
+        >
+          <svg
+            width="16"
+            height="15"
+            className={isFavorite ? css.favIconActive : css.favIconDef}
+          >
+            <use
+              href={`/sprite.svg#${
+                isFavorite ? "icon-heart-active" : "icon-heart-default"
+              }`}
+            ></use>
+          </svg>
+        </button>
       </div>
       <div className={css.carInfoCont}>
         <div className={css.carInfo}>

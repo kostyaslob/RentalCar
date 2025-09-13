@@ -1,4 +1,4 @@
-// import css from "./CarDetails.module.css";
+import css from "./CarDetails.module.css";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
@@ -15,13 +15,16 @@ export default function CarDetails() {
   }, [dispatch, id]);
 
   if (loading) return <Loader />;
+  if (!car) return null;
   
   return (
-    <div>
-      <h1>
-        {car.brand} {car.model}
-      </h1>
-      <img src={car.img} alt={`${car.brand} ${car.model}`} />
+    <div className={css.detailsWrapper}>
+      <div className={css.detailsContainer}>
+        <h1>
+          {car.brand} {car.model}
+        </h1>
+        <img src={car.img} alt={`${car.brand} ${car.model}`} />
+      </div>
     </div>
   );
 }
