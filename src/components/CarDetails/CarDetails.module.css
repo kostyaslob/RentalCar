@@ -2,5 +2,12 @@
     max-width: 1440px;
     padding: 84px 120px 104px;
     margin: 0 auto;
+    display: grid;
+    grid-template-columns: 640px 488px;
+    column-gap: 72px;
+}
+
+.carImage {
+    border-radius: 19px;
 }
 

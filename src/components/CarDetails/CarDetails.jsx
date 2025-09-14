@@ -2,10 +2,14 @@ import css from "./CarDetails.module.css";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import { fetchCarById } from "../../redux/operations";
-import { Loader } from "../Loader/Loader";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+
+import { fetchCarById } from "../../redux/operations";
+import { Loader } from "../Loader/Loader";
+
 
 export default function CarDetails() {
   const { id } = useParams();
@@ -39,7 +43,7 @@ export default function CarDetails() {
           initialValues={{
             name: "",
             email: "",
-            date: "",
+            date: null,
             comment: "",
           }}
           validationSchema={BookingSchema}
@@ -49,8 +53,141 @@ export default function CarDetails() {
             resetForm();
           }}
         >
-          
+          {({ setFieldValue, values }) => (
+            <Form className={css.form}>
+              <h3>Book your car now</h3>
+              <p>Stay connected! We are always ready to help you.</p>
+              <div>
+                <Field name="name" placeholder="Name*" />
+                <ErrorMessage
+                  name="name"
+                  component="div"
+                  className={css.error}
+                />
+              </div>
+              <div>
+                <Field name="email" type="email" placeholder="Email*" />
+                <ErrorMessage
+                  name="email"
+                  component="div"
+                  className={css.error}
+                />
+              </div>
+              <div>
+                <DatePicker
+                  selected={values.date}
+                  onChange={(value) => setFieldValue("date", value)}
+                  placeholderText="Booking date"
+                  dateFormat="dd.MM.yyyy"
+                  minDate={new Date()}
+                  className={css.datePicker}
+                />
+                <ErrorMessage
+                  name="date"
+                  component="div"
+                  className={css.error}
+                />
+              </div>
+              <div>
+                <Field
+                  as="textarea"
+                  name="comment"
+                  placeholder="Comment"
+                  rows="4"
+                />
+              </div>
+              <button type="submit">Send</button>
+            </Form>
+          )}
         </Formik>
+      </div>
+      <div className={css.rightWrapper}>
+        <div className={css.carInfoCont}>
+          <div className={css.carInfo}>
+            <h3>
+              {car.brand} {car.model}, {car.year}
+            </h3>
+            <span>Id: 9582</span>
+          </div>
+          <div className={css.carDescr}>
+            <div className={css.location}>
+              <svg width="16" height="16">
+                <use href="/sprite.svg#icon-location"></use>
+              </svg>
+              <span>{car.address.split(",")[1]}</span>
+              <span>{car.address.split(",")[2]}</span>
+              <span>Mileage: {car.mileage} km</span>
+            </div>
+            <span className={css.price}>${car.rentalPrice}</span>
+            <p>{car.description}</p>
+          </div>
+        </div>
+
+        <div className={css.conditionCont}>
+          <p>Rental Conditions: </p>
+          <ul>
+            {car.rentalConditions.map((cond, i) => (
+              <li key={i}>
+                <svg width="16" height="16">
+                  <use href="/sprite.svg#icon-check-circle"></use>
+                </svg>
+                <span>{cond}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className={css.specCont}>
+          <p>Car Specifications:</p>
+          <ul>
+            <li>
+              <svg width="16" height="16">
+                <use href="/sprite.svg#icon-calendar"></use>
+              </svg>
+              <span>Year: {car.year}</span>
+            </li>
+            <li>
+              <svg width="16" height="16">
+                <use href="/sprite.svg#icon-car"></use>
+              </svg>
+              <span>Type: {car.type}</span>
+            </li>
+            <li>
+              <svg width="16" height="16">
+                <use href="/sprite.svg#icon-fuel"></use>
+              </svg>
+              <span>Fuel Consumption: {car.fuelConsumption}</span>
+            </li>
+            <li>
+              <svg width="16" height="16">
+                <use href="/sprite.svg#icon-gear"></use>
+              </svg>
+              <span>Engine Size: {car.engineSize}</span>
+            </li>
+          </ul>
+        </div>
+
+        <div className={css.funcCont}>
+          <p>Accessories and functionalities:</p>
+          <ul>
+            {car.accessories.map((cond, i) => (
+              <li key={i}>
+                <svg width="16" height="16">
+                  <use href="/sprite.svg#icon-check-circle"></use>
+                </svg>
+                <span>{cond}</span>
+              </li>
+            ))}
+            {car.functionalities.map((cond, i) => (
+              <li key={i}>
+                <svg width="16" height="16">
+                  <use href="/sprite.svg#icon-check-circle"></use>
+                </svg>
+                <span>{cond}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </div>
   );
