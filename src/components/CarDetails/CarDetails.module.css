@@ -47,6 +47,12 @@
     font-size: 16px;
     line-height: 125%;
     color: #8d929a;
+    outline: none;
+    transition: border 0.3s;
+}
+
+.field:focus {
+    border: 2px solid #3470ff;
 }
 
 :global(.react-datepicker-wrapper) {
@@ -64,6 +70,71 @@
     font-size: 16px;
     line-height: 125%;
     color: #8d929a;
+}
+
+.formDiv :global(.react-datepicker) {
+    background: #fff;
+    border: 1px solid #3470ff;
+}
+
+.formDiv :global(.react-datepicker-popper .react-datepicker__triangle) {
+    stroke: #3470ff;
+}
+
+.formDiv :global(.react-datepicker__header) {
+    border: none;
+    background: #fff;
+}
+
+.formDiv :global(.react-datepicker__current-month) {
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 120%;
+    text-align: center;
+    color: #101828;
+}
+
+.formDiv :global(.react-datepicker__day-names) {
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 120%;
+    text-align: center;
+    color: #8d929a;
+    text-transform: uppercase;
+    text-align: center;
+    border-bottom: 1px solid #3470ff;
+}
+
+.formDiv :global(.react-datepicker__day) {
+    font-family: "Inter", sans-serif;
+    border-radius: 0;
+    line-height: 32px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.formDiv :global(.react-datepicker__day--selected) {
+    border-radius: 32px;
+    width: 36px;
+    height: 32px;
+    line-height: 32px;
+    background: #3470ff;
+    color: #fff;
+}
+
+.formDiv :global(.react-datepicker__input-container input) {
+    border: 1px solid #f7f7f7;
+    border-radius: 12px;
+    padding: 14px 20px;
+    outline: none;
+    width: 100%;
+    transition: border 0.3s;
+}
+
+.formDiv :global(.react-datepicker__input-container input:focus) {
+    border: 2px solid #3470ff;
 }
 
 .formDiv {

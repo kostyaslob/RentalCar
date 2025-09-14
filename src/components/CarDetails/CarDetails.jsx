@@ -4,13 +4,15 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import DatePicker from "react-datepicker";
+import DatePicker, { registerLocale } from "react-datepicker";
+import enGB from "date-fns/locale/en-GB";
 import "react-datepicker/dist/react-datepicker.css";
 import toast from "react-hot-toast";
 
 import { fetchCarById } from "../../redux/operations";
 import { Loader } from "../Loader/Loader";
 
+registerLocale("en-GB", enGB);
 
 export default function CarDetails() {
   const { id } = useParams();
@@ -49,8 +51,14 @@ export default function CarDetails() {
           }}
           validationSchema={BookingSchema}
           onSubmit={(values, { resetForm }) => {
-            console.log("Booking:", values);
-            toast.success("Booking submitted successfully!");
+            const formattedDate = values.date
+              ? values.date.toLocaleDateString("en-GB", {
+                  day: "2-digit",
+                  month: "short",
+                  year: "numeric",
+                })
+              : "";
+            toast.success(`Booking confirmed on ${formattedDate}!`);
             resetForm();
           }}
         >
@@ -86,6 +94,7 @@ export default function CarDetails() {
                   placeholderText="Booking date"
                   dateFormat="dd.MM.yyyy"
                   minDate={new Date()}
+                  locale="en-GB"
                   className={css.datePicker}
                 />
                 <ErrorMessage
