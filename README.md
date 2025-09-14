@@ -1,12 +1,54 @@
-# React + Vite
+# 🚗 Rental Car
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A **car rental web application** built with **React**, **Redux Toolkit**, and **React Router**.  
+The app allows users to browse a catalog of cars, view detailed information, add favorites, and book a car online.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🌐 Website
+- 🏠 Home: [rental-car-six-iota.vercel.app](https://rental-car-six-iota.vercel.app/)  
+- 📑 Catalog: [rental-car-six-iota.vercel.app/catalog](https://rental-car-six-iota.vercel.app/catalog)  
+- 🚘 Car details: [rental-car-six-iota.vercel.app/catalog/11a3ab35-07b8-4336-b06b-602cdc309f2c](https://rental-car-six-iota.vercel.app/catalog/11a3ab35-07b8-4336-b06b-602cdc309f2c)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## ✨ Features
+- 🔍 Browse available cars in a catalog  
+- 🎯 Filter and search by brand, price, mileage, etc.  
+- 📖 View detailed car information  
+- ⭐ Add cars to **favorites**  
+- 📝 Book a car via a form with confirmation toast  
+
+---
+
+## 🛠️ Tech Stack
+- ⚛️ **React** - component-based UI  
+- 📦 **Redux Toolkit** - state management  
+- 💾 **redux-persist** - favorites storage  
+- 🔀 **React Router** - navigation  
+- 🎨 **CSS Modules / SASS** - styling  
+- ▲ **Vercel** - deployment 
+
+---
+
+## ⚙️ Getting Started
+
+### 1️⃣ Clone the repository
+    ```bash
+    git clone https://github.com/kostyaslob/RentalCar.git 
+    cd RentalCar
+
+### 2️⃣ Install dependencies
+    npm install
+
+### 3️⃣ Run the development server
+    npm run dev
+
+### 4️⃣ The project will run at: 👉 http://localhost:3000
+
+---
+
+## 👨‍💻 Author
+
+Developed by Kostya Slobodianiuk (Fullstack Developer).
+If you have any questions or suggestions - feel free to reach out 🚀
