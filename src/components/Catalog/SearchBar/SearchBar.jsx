@@ -156,7 +156,7 @@ export default function SearchBar() {
         <div className={css.mileage}>
           <input
             type="text"
-            value={minMileage}
+            value={minMileage ? `From ${minMileage}` : ""}
             onChange={(event) =>
               setMinMileage(formatNumber(event.target.value))
             }
@@ -164,7 +164,7 @@ export default function SearchBar() {
           />
           <input
             type="text"
-            value={maxMileage}
+            value={maxMileage ? `To ${maxMileage}` : ""}
             onChange={(event) =>
               setMaxMileage(formatNumber(event.target.value))
             }
