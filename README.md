@@ -6,9 +6,9 @@ The app allows users to browse a catalog of cars, view detailed information, add
 ---
 
 ## 🌐 Website
-- 🏠 Home: [rental-car-six-iota.vercel.app](https://rental-car-six-iota.vercel.app/)  
-- 📑 Catalog: [rental-car-six-iota.vercel.app/catalog](https://rental-car-six-iota.vercel.app/catalog)  
-- 🚘 Car details: [rental-car-six-iota.vercel.app/catalog/11a3ab35-07b8-4336-b06b-602cdc309f2c](https://rental-car-six-iota.vercel.app/catalog/11a3ab35-07b8-4336-b06b-602cdc309f2c)
+- 🏠 [Home](https://rental-car-six-iota.vercel.app/)  
+- 📑 [Catalog](https://rental-car-six-iota.vercel.app/catalog)  
+- 🚘 [Car Details](https://rental-car-six-iota.vercel.app/catalog/11a3ab35-07b8-4336-b06b-602cdc309f2c)
 
 ---
 

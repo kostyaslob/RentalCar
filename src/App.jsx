@@ -1,4 +1,3 @@
-// import css from "./App.module.css";
 import { Navigate, Route, Routes } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
 import HomePage from "./pages/HomePage/HomePage";
