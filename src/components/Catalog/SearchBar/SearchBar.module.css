@@ -38,6 +38,37 @@
     
 }
 
+.field :global(.react-select__indicator-separator) {
+    display: none;
+}
+
+.field :global(.react-select__dropdown-indicator) {
+    transition: transform 0.3s ease;
+}
+
+.field :global(.react-select__control--menu-is-open .react-select__dropdown-indicator) {
+    transform: rotate(180deg);
+}
+
+.field :global(.react-select__placeholder) {
+    margin: 0;
+}
+
+.field :global(.react-select__menu-list::-webkit-scrollbar) {
+    width: 8px;
+    border-radius: 10px;
+}
+
+.field :global(.react-select__menu-list::-webkit-scrollbar-thumb) {
+    height: 128px;
+    background: #dadde1;
+    border-radius: 10px;
+}
+
+.field :global(.react-select__menu-list::-webkit-scrollbar-button) {
+    display: none;
+}
+
 .mileage {
     display: flex;
 }
