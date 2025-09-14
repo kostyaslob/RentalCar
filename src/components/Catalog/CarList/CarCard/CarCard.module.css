@@ -21,7 +21,6 @@
     fill: none;
     stroke: #f2f4f7;
     stroke-width: 3;
-
 }
 
 .favIconActive {
@@ -47,8 +46,25 @@
     margin-bottom: 8px;
 }
 
+.carInfo h3 {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 125%;
+    color: #101828;
+}
+
+.model {
+    color: #3470ff;
+}
+
+.price {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 125%;
+    color: #101828;
+}
+
 .carDescr {
-    font-family: "Manrope", sans-serif;
     font-weight: 400;
     font-size: 12px;
     line-height: 133%;
@@ -86,7 +102,6 @@
     background: #3470ff;
     text-align: center;
 
-    font-family: "Manrope", sans-serif;
     font-weight: 600;
     font-size: 16px;
     line-height: 125%;
