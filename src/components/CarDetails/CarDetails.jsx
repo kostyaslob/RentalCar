@@ -6,6 +6,7 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import toast from "react-hot-toast";
 
 import { fetchCarById } from "../../redux/operations";
 import { Loader } from "../Loader/Loader";
@@ -49,7 +50,7 @@ export default function CarDetails() {
           validationSchema={BookingSchema}
           onSubmit={(values, { resetForm }) => {
             console.log("Booking:", values);
-            alert("Booking submitted!");
+            toast.success("Booking submitted successfully!");
             resetForm();
           }}
         >
@@ -57,23 +58,28 @@ export default function CarDetails() {
             <Form className={css.form}>
               <h3>Book your car now</h3>
               <p>Stay connected! We are always ready to help you.</p>
-              <div>
-                <Field name="name" placeholder="Name*" />
+              <div className={css.formDiv}>
+                <Field className={css.field} name="name" placeholder="Name*" />
                 <ErrorMessage
                   name="name"
-                  component="div"
+                  component="span"
                   className={css.error}
                 />
               </div>
-              <div>
-                <Field name="email" type="email" placeholder="Email*" />
+              <div className={css.formDiv}>
+                <Field
+                  className={css.field}
+                  name="email"
+                  type="email"
+                  placeholder="Email*"
+                />
                 <ErrorMessage
                   name="email"
-                  component="div"
+                  component="span"
                   className={css.error}
                 />
               </div>
-              <div>
+              <div className={css.formDiv}>
                 <DatePicker
                   selected={values.date}
                   onChange={(value) => setFieldValue("date", value)}
@@ -84,19 +90,24 @@ export default function CarDetails() {
                 />
                 <ErrorMessage
                   name="date"
-                  component="div"
+                  component="span"
                   className={css.error}
                 />
               </div>
-              <div>
+              <div className={css.formDiv}>
                 <Field
                   as="textarea"
                   name="comment"
                   placeholder="Comment"
-                  rows="4"
+                  rows="3"
+                  className={css.field}
                 />
               </div>
-              <button type="submit">Send</button>
+              <div className={css.fieldSendBtn}>
+                <button className={css.submitBtn} type="submit">
+                  Send
+                </button>
+              </div>
             </Form>
           )}
         </Formik>
