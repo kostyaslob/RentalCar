@@ -100,5 +100,13 @@
     line-height: 125%;
     color: #fff;
     border: none;
+
+    transition: background-color 0.3s ease;
 }
+        
+.readMoreBtn:hover,
+.readMoreBtn:focus {
+    background: #0b44cd;
+}
+
 

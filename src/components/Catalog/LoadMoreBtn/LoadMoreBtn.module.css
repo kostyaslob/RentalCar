@@ -12,4 +12,11 @@
     font-size: 16px;
     line-height: 125%;
     color: #101828;
+
+    transition: border 0.3s ease;
+}
+
+.loadMoreBtn:hover,
+.loadMoreBtn:focus {
+    border: 1px solid #0b44cd;
 }

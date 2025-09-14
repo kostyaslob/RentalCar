@@ -95,4 +95,106 @@
     font-size: 16px;
     line-height: 125%;
     color: #fff;
+
+    transition: background-color 0.3s ease;
 }
+
+.submitBtn:hover,
+.submitBtn:focus {
+    background: #0b44cd;
+}
+
+.rightWrapper {
+    padding-top: 20px;
+}
+
+.carInfoCont {
+    margin-bottom: 68px;
+}
+
+.carInfo {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.carInfo h3 {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 133%;
+    text-align: center;
+    color: #101828;
+}
+
+.carInfo span {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 125%;
+    color: #8d929a;
+}
+
+.location {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 125%;
+    color: #101828;
+}
+
+.location svg {
+    margin-right: 4px;
+}
+
+.location span:first-of-type {
+    margin-right: 16px;
+}
+
+.mileage {
+    white-space: nowrap;
+}
+
+.price {
+    display: block;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 133%;
+    color: #3470ff;
+    margin-bottom: 32px;
+}
+
+.carInfoWrapper>div:not(:last-of-type) {
+    margin-bottom: 110px;
+}
+
+.carInfoWrapper p {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 120%;
+    color: #101828;
+    margin-bottom: 20px;
+}
+
+.carInfoWrapper ul {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 125%;
+    color: #101828;
+}
+
+.carInfoWrapper li {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+
+
+}
+
+

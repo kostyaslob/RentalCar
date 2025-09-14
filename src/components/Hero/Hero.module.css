@@ -46,4 +46,11 @@
     line-height: 125%;
     color: #fff;
     text-align: center;
+
+    transition: background-color 0.3s ease;
+}
+
+.viewCatalogBtn:hover,
+.viewCatalogBtn:focus {
+    background: #0b44cd;
 }

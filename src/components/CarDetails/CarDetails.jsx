@@ -118,86 +118,87 @@ export default function CarDetails() {
             <h3>
               {car.brand} {car.model}, {car.year}
             </h3>
-            <span>Id: 9582</span>
+            <span>Id: {car.id.slice(0, 4)}</span>
           </div>
           <div className={css.carDescr}>
             <div className={css.location}>
               <svg width="16" height="16">
                 <use href="/sprite.svg#icon-location"></use>
               </svg>
-              <span>{car.address.split(",")[1]}</span>
-              <span>{car.address.split(",")[2]}</span>
-              <span>Mileage: {car.mileage} km</span>
+              <span>
+                {car.address.split(",")[1]}, {car.address.split(",")[2]}
+              </span>
+              <span className={css.mileage}>Mileage: {car.mileage} km</span>
             </div>
             <span className={css.price}>${car.rentalPrice}</span>
             <p>{car.description}</p>
           </div>
         </div>
 
-        <div className={css.conditionCont}>
-          <p>Rental Conditions: </p>
-          <ul>
-            {car.rentalConditions.map((cond, i) => (
-              <li key={i}>
+        <div className={css.carInfoWrapper}>
+          <div className={css.conditionCont}>
+            <p>Rental Conditions: </p>
+            <ul>
+              {car.rentalConditions.map((cond, i) => (
+                <li key={i}>
+                  <svg width="16" height="16">
+                    <use href="/sprite.svg#icon-check-circle"></use>
+                  </svg>
+                  <span>{cond}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className={css.specCont}>
+            <p>Car Specifications:</p>
+            <ul>
+              <li>
                 <svg width="16" height="16">
-                  <use href="/sprite.svg#icon-check-circle"></use>
+                  <use href="/sprite.svg#icon-calendar"></use>
                 </svg>
-                <span>{cond}</span>
+                <span>Year: {car.year}</span>
               </li>
-            ))}
-          </ul>
-        </div>
-
-        <div className={css.specCont}>
-          <p>Car Specifications:</p>
-          <ul>
-            <li>
-              <svg width="16" height="16">
-                <use href="/sprite.svg#icon-calendar"></use>
-              </svg>
-              <span>Year: {car.year}</span>
-            </li>
-            <li>
-              <svg width="16" height="16">
-                <use href="/sprite.svg#icon-car"></use>
-              </svg>
-              <span>Type: {car.type}</span>
-            </li>
-            <li>
-              <svg width="16" height="16">
-                <use href="/sprite.svg#icon-fuel"></use>
-              </svg>
-              <span>Fuel Consumption: {car.fuelConsumption}</span>
-            </li>
-            <li>
-              <svg width="16" height="16">
-                <use href="/sprite.svg#icon-gear"></use>
-              </svg>
-              <span>Engine Size: {car.engineSize}</span>
-            </li>
-          </ul>
-        </div>
-
-        <div className={css.funcCont}>
-          <p>Accessories and functionalities:</p>
-          <ul>
-            {car.accessories.map((cond, i) => (
-              <li key={i}>
+              <li>
                 <svg width="16" height="16">
-                  <use href="/sprite.svg#icon-check-circle"></use>
+                  <use href="/sprite.svg#icon-car"></use>
                 </svg>
-                <span>{cond}</span>
+                <span>Type: {car.type}</span>
               </li>
-            ))}
-            {car.functionalities.map((cond, i) => (
-              <li key={i}>
+              <li>
                 <svg width="16" height="16">
-                  <use href="/sprite.svg#icon-check-circle"></use>
+                  <use href="/sprite.svg#icon-fuel"></use>
                 </svg>
-                <span>{cond}</span>
+                <span>Fuel Consumption: {car.fuelConsumption}</span>
               </li>
-            ))}
-          </ul>
+              <li>
+                <svg width="16" height="16">
+                  <use href="/sprite.svg#icon-gear"></use>
+                </svg>
+                <span>Engine Size: {car.engineSize}</span>
+              </li>
+            </ul>
+          </div>
+          <div className={css.funcCont}>
+            <p>Accessories and functionalities:</p>
+            <ul>
+              {car.accessories.map((cond, i) => (
+                <li key={i}>
+                  <svg width="16" height="16">
+                    <use href="/sprite.svg#icon-check-circle"></use>
+                  </svg>
+                  <span>{cond}</span>
+                </li>
+              ))}
+              {car.functionalities.map((cond, i) => (
+                <li key={i}>
+                  <svg width="16" height="16">
+                    <use href="/sprite.svg#icon-check-circle"></use>
+                  </svg>
+                  <span>{cond}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     </div>
